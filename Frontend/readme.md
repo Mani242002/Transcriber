@@ -1,4 +1,4 @@
 This file contains the Front end part of the Project which is mainly developed using Stream Lit Library in Python.                                                               
 We Mainly Used Stream Lit for Two Main reasons:                                                                                                                                  
-1.Rapid Prototyping: Streamlit enables quick web app development with minimal code, making it ideal for data-driven applications and dashboards without the complexity of traditional web frameworks.
+1.Rapid Prototyping: Streamlit enables quick web app development with minimal code, making it ideal for data-driven applications and dashboards without the complexity of traditional web frameworks.                                                                                                                                                 
 2.Pythonic Interface: Streamlit's Python-centric approach simplifies UI development, eliminating the need to learn additional languages or technologies, reducing the learning curve for Python developers.
