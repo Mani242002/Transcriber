@@ -1,8 +1,11 @@
 import streamlit as st
-from Generative_AI import supported_languages, translate_text, read_text_file, read_pdf_file, read_word_file,available_languages
+import sys
+sys.path.append(r"D:\python_preparation\pythonProject1")
+from Transcriber.Backend.Generative_AI import translate_text, read_text_file, read_pdf_file, read_word_file,available_languages
 import speech_recognition as sr
 from gtts import gTTS
 import os
+
 
 # Initialize the recognizer (SpeechRecognition)
 r = sr.Recognizer()
