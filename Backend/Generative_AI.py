@@ -1,6 +1,7 @@
 from googletrans import Translator
 import PyPDF2
 from docx import Document
+import io
 def translate_text(text, target_language):
     translator = Translator()
     translated_text = translator.translate(text, dest=target_language)
@@ -103,17 +104,18 @@ def read_text_file(file_path):
     except Exception as e:
         return str(e)
 
-def read_pdf_file(file_path):
+
+def read_pdf_file(uploaded_file):
+    print(uploaded_file)
     try:
         pdf_content = ""
-        with open(file_path, 'rb') as file:
-            pdf_reader = PyPDF2.PdfFileReader(file)
-            for page_num in range(pdf_reader.numPages):
-                page = pdf_reader.getPage(page_num)
-                pdf_content += page.extractText()
+        pdf_data = uploaded_file.read()
+        pdf_file_object = io.BytesIO(pdf_data)
+        pdf_reader = PyPDF2.PdfReader(pdf_file_object)
+        for page_num in range(len(pdf_reader.pages) ):
+            page = pdf_reader.pages[page_num]
+            pdf_content += page.extract_text()
         return pdf_content
-    except FileNotFoundError:
-        return f"File not found: {file_path}"
     except Exception as e:
         return str(e)
 
